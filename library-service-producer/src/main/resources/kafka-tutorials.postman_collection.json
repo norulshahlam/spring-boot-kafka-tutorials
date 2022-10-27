@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "0bdead19-8b2e-4f0e-82a3-4a10f6cca013",
+		"name": "kafka-tutorials",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10507560"
+	},
+	"item": [
+		{
+			"name": "new-library-event-with-default-topic",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"libraryEventId\":null,\r\n    \"book\":{\r\n        \"bookId\":2,\r\n        \"bookName\":\"abc\",\r\n        \"bookAuthor\":\"esrh\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/new-library-event-with-default-topic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"new-library-event-with-default-topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new-library-event-with-defined-topic",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"libraryEventId\":22,\r\n    \"book\":{\r\n        \"bookId\":2,\r\n        \"bookName\":\"abc\",\r\n        \"bookAuthor\":\"fffsef\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/new-library-event-with-defined-topic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"new-library-event-with-defined-topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new-library-event-with-defined-topic Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"libraryEventId\":333,\r\n    \"book\":{\r\n        \"bookId\":2,\r\n        \"bookName\":\"abc\",\r\n        \"bookAuthor\":\"zzzfff\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/new-library-event-with-defined-topic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"new-library-event-with-defined-topic"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
