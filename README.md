@@ -13,7 +13,7 @@
 
 ![Image](./library-service-producer/src/main/resources/record-partition-topic.png)
 
-Topic - Entity in Kafka with a name. Think of it like a table in DB.
+Topic - Entity in Kafka with a name. Think of it like a table in DB.  
 Partition - Where the message lives inside the topic. Each topic will be created with one or more partitions. Kafka distributes the partitions of a particular topic across multiple brokers. 
 
 [ProducerRecord](https://kafka.apache.org/23/javadoc/org/apache/kafka/clients/producer/ProducerRecord.html)
