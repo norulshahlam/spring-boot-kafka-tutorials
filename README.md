@@ -61,6 +61,32 @@ As you can see from the example, the data and your partitions will be distribute
 
 [Further reading](https://www.linkedin.com/pulse/apache-kafka-all-broker-saikrishna-cheruvu/)
 
+
+</details>
+
+
+<details>
+<summary><b>Consumer group</b></summary>
+Consumer group is a bunch of consumers that form a group in order to cooperate and consume messages from a set of topics.  
+
+Example: 
+If two consumers have subscribed to the same topic and are present in the same consumer group, then these two consumers would be assigned a different set of partitions and none of these two consumers would receive the same messages.
+
+![Image](https://miro.medium.com/v2/resize:fit:720/format:webp/1*zTRQR9H_Glv1xbPWl_yY6w.png)
+
+Example 2:
+
+5 consumers in the consumer group which is more than the number of partitions of the TopicT1, then every consumer would be assigned a single partition and the remaining consumer (Consumer5) would be left idle
+
+![Image](https://miro.medium.com/v2/resize:fit:720/format:webp/1*INW2vHXkN7v47-WvrgbhbA.png)
+
+[Further reading](https://medium.com/javarevisited/kafka-partitions-and-consumer-groups-in-6-mins-9e0e336c6c00)
+
+</details>
+
+<details>
+<summary><b>Replication Factor & In-Sync Replicas</b></summary>
+    xxxxx
 </details><br>
 
 `Consumer groups`
