@@ -67,7 +67,10 @@ As you can see from the example, the data and your partitions will be distribute
 
 <details>
 <summary><b>Consumer group</b></summary>
-Consumer group is a bunch of consumers that form a group in order to cooperate and consume messages from a set of topics.  
+
+- Consumer group is a bunch of consumers that form a group in order to cooperate and consume messages from a set of topics.  
+- Consumer groups are formed when you have multiple instances of the same application.
+- Consumer groups are the foundation for scalable message consumption.
 
 Example: 
 If two consumers have subscribed to the same topic and are present in the same consumer group, then these two consumers would be assigned a different set of partitions and none of these two consumers would receive the same messages.
@@ -86,7 +89,9 @@ Example 2:
 
 <details>
 <summary><b>Replication Factor & In-Sync Replicas</b></summary>
-    xxxxx
+
+`Replication-factor` is the total number of copies of the data stored in an Apache Kafka cluster. 
+`min. insync. replicas` is the minimum number of copies of the data that you are willing to have online at any time to continue running and accepting new incoming messages.
 </details><br>
 
 `Consumer groups`
