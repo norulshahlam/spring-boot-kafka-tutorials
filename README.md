@@ -269,3 +269,23 @@ the 2nd instance will show
 Since we have 3 brokers running, it will be distributed among the 2 instances.
 
 </details>
+
+### Tools used for visualizing kafka topics, events, and consumer groups
+<details>
+<summary>Click to expand</summary><br>
+[Reference](https://www.reddit.com/r/apachekafka/comments/1dcet0g/what_tools_do_you_use_for_visualizing_kafka/)  
+
+- Kafka Tool (http://www.kafkatool.com/) - A GUI application for managing and using Apache Kafka clusters. It provides an easy-to-use interface for browsing Kafka topics, partitions, and messages.
+
+- Kafbat (https://kafbat.io/) - A web-based Kafka management and monitoring tool. It allows users to view topics, partitions, and messages, as well as monitor consumer groups and offsets. Kafbat UI makes your kafka data flows observable, simplifies troubleshooting, and helps optimize performance—all in a lightweight dashboard.
+
+Run docker command:
+```bash
+    docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true ghcr.io/kafbat/kafka-ui
+```
+
+- Conduktor (https://www.conduktor.io/) - A desktop application for managing and monitoring Apache Kafka clusters. It provides a user-friendly interface for browsing topics, partitions, and messages, as well as monitoring consumer groups and offsets.
+
+- Kpow (https://factorhouse.io/kpow/) - A web-based Kafka monitoring and management tool. It allows users to view topics, partitions, and messages, as well as monitor consumer groups and offsets. Kpow provides real-time metrics and alerts for Kafka clusters.
+
+</details>
