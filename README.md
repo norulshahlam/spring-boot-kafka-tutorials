@@ -16,18 +16,18 @@
 
 <details>
 <summary><b>Topic</b></summary>
-    Topic is entity in Kafka with a name. Think of it like a table in DB. Each topic will be created with one or more partitions. Kafka distributes the partitions of a particular topic across multiple brokers.  
+    Topic is entity in Kafka with a name. Think of it like a table in DB.
 </details>
 
 <details>
 <summary><b>Partition</b></summary>
-    Where the message lives inside the topic. 
+    Where the message lives inside the topic. When you create a topic, you can define one or more partitions and replication factor. Kafka distributes the partitions of a particular topic across multiple brokers IF you have >1 broker. If you only have 1, then these 3 partitions will live on the same broker. Rule of thumb: Brokers should be equal to or greater than replication factor else topic creation fails due to lack of brokers.
 </details>
 
 <details>
 <summary><b>Record</b></summary>
 
-A single unit of message to be sent. This unit is an object which contains several fields. There are 2 types of records - [ProducerRecord](https://kafka.apache.org/23/javadoc/org/apache/kafka/clients/producer/ProducerRecord.html) & [ConsumerRecords](https://lankydan.dev/intro-to-kafka-consumers). ConsumerRecords have several extra fields and a few that become required compared to ProducerRecords.
+A single unit of message to be sent / receive. This unit is an object which contains several fields. There are 2 types of records - [ProducerRecord](https://kafka.apache.org/23/javadoc/org/apache/kafka/clients/producer/ProducerRecord.html) & [ConsumerRecords](https://lankydan.dev/intro-to-kafka-consumers). ConsumerRecords have several extra fields and a few that become required compared to ProducerRecords.
 
 ![Image](https://lankydan.dev/static/afe807fbb5018fd70077474651a5039e/fbf9a/kafka-consumer-record-vs-producer-record.png)
 
