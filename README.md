@@ -273,6 +273,7 @@ Since we have 3 brokers running, it will be distributed among the 2 instances.
 ### Tools used for visualizing kafka topics, events, and consumer groups
 <details>
 <summary>Click to expand</summary><br>
+
 [Reference](https://www.reddit.com/r/apachekafka/comments/1dcet0g/what_tools_do_you_use_for_visualizing_kafka/)  
 
 - Kafka Tool (http://www.kafkatool.com/) - A GUI application for managing and using Apache Kafka clusters. It provides an easy-to-use interface for browsing Kafka topics, partitions, and messages.
