@@ -90,7 +90,8 @@ Example 2:
 <details>
 <summary><b>Replication Factor & In-Sync Replicas</b></summary>
 
-`Replication-factor` is the total number of copies of the data stored in an Apache Kafka cluster. 
+`Replication-factor` is the total number of copies of the data stored in an Apache Kafka cluster.  
+
 `min. insync. replicas` is the minimum number of copies of the data that you are willing to have online at any time to continue running and accepting new incoming messages.
 </details><br>
 
