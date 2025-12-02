@@ -100,6 +100,10 @@ The consumer group concept ensures that a message is only ever read by a single 
 
 When a consumer group consumes the partitions of a topic, Kafka makes sure that each partition is consumed by exactly one consumer in the group
 
+![Image](./library-service-producer/src/main/resources/consumer-group2.png)
+
+*******************************  
+
 ![Image](./library-service-producer/src/main/resources/consumer-group.png)
 
 ### Setting up kafka
