@@ -3,6 +3,7 @@
 [Reference #1](https://www.udemy.com/course/spring-boot-microservices-and-spring-cloud/)  
 [Reference #2](https://www.udemy.com/course/kafka-fundamentals-for-java-developers/)  
 [Reference #2](https://stackoverflow.com/questions/38024514/understanding-kafka-topics-and-partitions)  
+[Migrating from Zookper to KRaft](https://medium.com/@youssefali6212/apache-kafka-study-notes-3-zookeeper-vs-kraft-8eb683a8f6aa)  
 
 
 ### Architecture
