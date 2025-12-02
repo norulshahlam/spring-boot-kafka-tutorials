@@ -3,13 +3,12 @@
 [Reference #1](https://www.udemy.com/course/spring-boot-microservices-and-spring-cloud/)  
 [Reference #2](https://www.udemy.com/course/kafka-fundamentals-for-java-developers/)  
 [Reference #2](https://stackoverflow.com/questions/38024514/understanding-kafka-topics-and-partitions)  
-
-
-
+*******************************
 ### Architecture
 
 ![Image](./library-service-producer/src/main/resources/kafka-architecture.png)
 
+************************
 ### Terminologies
 
 ![Image](./library-service-producer/src/main/resources/record-partition-topic.png)
@@ -46,7 +45,6 @@ How brokers and topics relate (example):
 </details>
 
 
-
 <details>
 <summary><b>Migrating from Zookeeper to KRaft</b></summary>
 
@@ -56,7 +54,6 @@ How brokers and topics relate (example):
 - KRaft mode is still a relatively new feature in Apache Kafka, and it may not be suitable for all use cases. It is recommended to carefully evaluate the benefits and drawbacks of KRaft mode before migrating from ZooKeeper to KRaft.
 
 [Further reading](https://medium.com/@youssefali6212/apache-kafka-study-notes-3-zookeeper-vs-kraft-8eb683a8f6aa)
-
 
 
 </details>
@@ -100,7 +97,7 @@ The consumer group concept ensures that a message is only ever read by a single 
 
 When a consumer group consumes the partitions of a topic, Kafka makes sure that each partition is consumed by exactly one consumer in the group
 
-![Image](./library-service-producer/src/main/resources/consumer-group2.png)
+![Image](./library-service-producer/src/main/resources/consumer-group3.png)
 
 *******************************  
 
