@@ -17,52 +17,33 @@
 
 <details>
 <summary><b>Topic</b></summary>
-    Topic is entity in Kafka with a name. Think of it like a table in DB.
+A topic is a named, logical stream of records in Kafka. Producers publish records to a topic and consumers read from a topic. Topics are multi-subscriber: multiple consumer groups can read the same topic independently. Ordering is only guaranteed within a single partition of a topic, not across the whole topic. Use a message key to send related messages to the same partition when you need ordering.
 </details>
 
 <details>
 <summary><b>Partition</b></summary>
-    Where the message lives inside the topic. When you create a topic, you can define one or more partitions and replication factor. Kafka distributes the partitions of a particular topic across multiple brokers IF you have >1 broker. If you only have 1, then these 3 partitions will live on the same broker. Rule of thumb: Brokers should be equal to or greater than replication factor else topic creation fails due to lack of brokers.
+A partition is an ordered, immutable sequence of records within a topic (a commit log). Partitions provide parallelism and ordering: records are strictly ordered only inside a partition and are addressed by a monotonically increasing offset. When creating a topic you choose the number of partitions and the replication factor. Kafka distributes a topic's partitions across the brokers in the cluster to scale throughput and availability.
 </details>
 
 <details>
 <summary><b>Record</b></summary>
-
-A single unit of message to be sent / receive. This unit is an object which contains several fields. There are 2 types of records - [ProducerRecord](https://kafka.apache.org/23/javadoc/org/apache/kafka/clients/producer/ProducerRecord.html) & [ConsumerRecords](https://lankydan.dev/intro-to-kafka-consumers). ConsumerRecords have several extra fields and a few that become required compared to ProducerRecords.
-
-![Image](https://lankydan.dev/static/afe807fbb5018fd70077474651a5039e/fbf9a/kafka-consumer-record-vs-producer-record.png)
-
+A record (also called a message) is the basic unit of data in Kafka. A record typically contains a key (optional), a value (payload), headers (optional metadata), and a timestamp. Records are written to partitions and stored at a specific offset. In the Java client you create a ProducerRecord to send data; consumers receive ConsumerRecord objects that include metadata (topic, partition, offset, timestamp) along with the key and value.
 </details>
 
 <details>
 <summary><b>Brokers</b></summary>
+- A Kafka broker is a single Kafka server that stores data (partitions) and serves client requests (producers and consumers).
+- Brokers form a Kafka cluster and are identified by a unique broker id (integer).
+- Partitions for topics are distributed across brokers; this distribution provides load balancing and horizontal scalability.
+- One broker in the cluster acts as the controller to manage cluster metadata and orchestrate leader election for partitions.
+- After connecting to any bootstrap broker you can discover and interact with the entire cluster.
 
-- A Kafka cluster is a group of multiple Kafka brokers.
-- A Kafka broker is a server in the cluster this will receive and send the data.
-- Each Kafka broker is identified with an ID (integer).
-- Each broker will have certain topic partitions.
-- All the topic partitions data is Distributed across all brokers(load balanced).
-- After connecting to any broker (bootstrap broker) you can have connectivity to the entire cluster.
+How brokers and topics relate (example):
+- Topic-A with three partitions can have those partitions spread across Broker-101, Broker-102 and Broker-103.
+- Topic-B with two partitions may have its partitions on Broker-101 and Broker-102. Broker-103 may not hold Topic-B partitions in this example.
+- This distribution is intentional: each broker stores the partitions assigned to it (and their replicas), not all topic data.
 
-How brokers and topics are related?
-
-Consider a scenario
-- Topic-A has three partitions and 
-- Topic B has two partitions. 
-- Brokers 101, 102, and 103 are the final three Kafka brokers. 
-- Broker 101 will therefore have Topic-A, Partition 0, while 
-- Broker 102 will have Topic-A, Partition 2. 
-- This is not an error. Broker 103 is then discussing Topic-A, Partition 1. 
-- Therefore, as we can see, the subject divisions will be distributed among all brokers in any sequence. 
-- We also have Topic-B, Partition 1 on Broker 101, and 
-- Topic-B, Partition 0 on Broker 102 for this topic. 
-- Thus, in this instance, We can see that the data is spread, and since the two partitions have already been added to our Kafka broker, it is expected that Broker 103 does not have any Topic-B data partitions. And this is Kafka's power. 
-
-As you can see from the example, the data and your partitions will be distributed throughout all brokers. This is how Kafka scales, and it is what is referred to as horizontal scaling. The more partitions and brokers we add, the more evenly the data will be dispersed throughout our whole cluster. We also take note of the fact that the brokers only have the data that they ought to have—not all of it.
-
-[Further reading](https://www.linkedin.com/pulse/apache-kafka-all-broker-saikrishna-cheruvu/)
-
-
+[Further reading](https://www.confluent.io/blog/introducing-kafka/)
 </details>
 
 
