@@ -3,7 +3,7 @@
 [Reference #1](https://www.udemy.com/course/spring-boot-microservices-and-spring-cloud/)  
 [Reference #2](https://www.udemy.com/course/kafka-fundamentals-for-java-developers/)  
 [Reference #2](https://stackoverflow.com/questions/38024514/understanding-kafka-topics-and-partitions)  
-[Migrating from Zookper to KRaft](https://medium.com/@youssefali6212/apache-kafka-study-notes-3-zookeeper-vs-kraft-8eb683a8f6aa)  
+
 
 
 ### Architecture
@@ -14,6 +14,10 @@
 
 ![Image](./library-service-producer/src/main/resources/record-partition-topic.png)
 
+<details>
+<summary><b>Record</b></summary>
+A record (also called a message) is the basic unit of data in Kafka. A record typically contains a key (optional), a value (payload), headers (optional metadata), and a timestamp. Records are written to partitions and stored at a specific offset. In the Java client you create a ProducerRecord to send data; consumers receive ConsumerRecord objects that include metadata (topic, partition, offset, timestamp) along with the key and value.
+</details>
 
 <details>
 <summary><b>Topic</b></summary>
@@ -23,11 +27,6 @@ A topic is a named, logical stream of records in Kafka (Think DB table). Produce
 <details>
 <summary><b>Partition</b></summary>
 A partition is an ordered, immutable sequence of records within a topic (a commit log). Partitions provide parallelism and ordering: records are strictly ordered only inside a partition and are addressed by a monotonically increasing offset. When creating a topic you choose the number of partitions and the replication factor. Kafka distributes a topic's partitions across the brokers in the cluster to scale throughput and availability.
-</details>
-
-<details>
-<summary><b>Record</b></summary>
-A record (also called a message) is the basic unit of data in Kafka. A record typically contains a key (optional), a value (payload), headers (optional metadata), and a timestamp. Records are written to partitions and stored at a specific offset. In the Java client you create a ProducerRecord to send data; consumers receive ConsumerRecord objects that include metadata (topic, partition, offset, timestamp) along with the key and value.
 </details>
 
 <details>
@@ -46,6 +45,21 @@ How brokers and topics relate (example):
 [Further reading](https://www.confluent.io/blog/introducing-kafka/)
 </details>
 
+
+
+<details>
+<summary><b>Migrating from Zookeeper to KRaft</b></summary>
+
+- KRaft (Kafka Raft) mode is a new way of running Apache Kafka without the need for an external ZooKeeper cluster. KRaft mode uses an internal consensus protocol based on the Raft algorithm to manage metadata and coordinate brokers in the Kafka cluster.
+- KRaft mode simplifies Kafka deployment and management by eliminating the need for a separate ZooKeeper cluster. It also improves scalability and fault tolerance by allowing Kafka brokers to manage their own metadata and coordinate directly with each other.
+- KRaft mode is available in Apache Kafka 2.8.0 and later versions. To use KRaft mode, you need to configure your Kafka brokers to run in KRaft mode and set up a KRaft controller quorum.
+- KRaft mode is still a relatively new feature in Apache Kafka, and it may not be suitable for all use cases. It is recommended to carefully evaluate the benefits and drawbacks of KRaft mode before migrating from ZooKeeper to KRaft.
+
+[Further reading](https://medium.com/@youssefali6212/apache-kafka-study-notes-3-zookeeper-vs-kraft-8eb683a8f6aa)
+
+
+
+</details>
 
 <details>
 <summary><b>Consumer group</b></summary>
