@@ -83,12 +83,17 @@ Example 2:
 <details>
 <summary><b>Replication Factor & In-Sync Replicas</b></summary>
 
-`Replication-factor` is the total number of copies of the data stored in an Apache Kafka cluster. Replication factor 1 means each record lives on one broker only.  
+Clear, concise explanation:
 
-`min. insync. replicas` is the minimum number of copies of the data that you are willing to have online at any time to continue running and accepting new incoming messages.
+`Replication factor` — number of copies of each partition stored across brokers. `replication.factor=1` means a single copy; `replication.factor=3` means three copies on three brokers.
 
-Example 1. Replication factor 3. min.insync.replicas 2. 2 copies must be in sync to accept writes. 1 broker can afford fail.  
-</details><br>
+`min.insync.replicas` — minimum number of replicas that must be in the ISR (in-sync replicas) for the broker to accept writes when the producer uses `acks=all`. If the number of in-sync replicas falls below this value, writes with `acks=all` will be rejected.
+
+`Example` — `replication.factor=3`, `min.insync.replicas=2` — at least 2 replicas must be in sync to accept writes with `acks=all`. You can tolerate one broker failure; if two replicas fall out of sync (only one ISR left), writes will be rejected until sufficient replicas rejoin the ISR.
+
+`Trade-off` - increasing `min.insync.replicas` improves durability and consistency but reduces availability (more chance writes are rejected during outages).
+
+</details>
 
 `Consumer groups`
 Kafka has the concept of consumer groups where several consumers are grouped to consume a given topic. Consumers in the same consumer group are assigned the same group-id value.
