@@ -17,7 +17,7 @@
 
 <details>
 <summary><b>Topic</b></summary>
-A topic is a named, logical stream of records in Kafka. Producers publish records to a topic and consumers read from a topic. Topics are multi-subscriber: multiple consumer groups can read the same topic independently. Ordering is only guaranteed within a single partition of a topic, not across the whole topic. Use a message key to send related messages to the same partition when you need ordering.
+A topic is a named, logical stream of records in Kafka (Think DB table). Producers publish records to a topic and consumers read from a topic. Topics are multi-subscriber: multiple consumer groups can read the same topic independently. Ordering is only guaranteed within a single partition of a topic, not across the whole topic. Use a message key to send related messages to the same partition when you need ordering.
 </details>
 
 <details>
