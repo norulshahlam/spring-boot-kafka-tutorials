@@ -84,8 +84,6 @@ Example 2:
 <details>
 <summary><b>Replication Factor & In-Sync Replicas</b></summary>
 
-Clear, concise explanation:
-
 `Replication factor` — number of copies of each partition stored across brokers. `replication.factor=1` means a single copy; `replication.factor=3` means three copies on three brokers.
 
 `min.insync.replicas` — minimum number of replicas that must be in the ISR (in-sync replicas) for the broker to accept writes when the producer uses `acks=all`. If the number of in-sync replicas falls below this value, writes with `acks=all` will be rejected.
