@@ -30,6 +30,7 @@ A partition is an ordered, immutable sequence of records within a topic (a commi
 
 <details>
 <summary><b>Brokers</b></summary>
+
 - A Kafka broker is a single Kafka server that stores data (partitions) and serves client requests (producers and consumers).
 - Brokers form a Kafka cluster and are identified by a unique broker id (integer).
 - Partitions for topics are distributed across brokers; this distribution provides load balancing and horizontal scalability.
