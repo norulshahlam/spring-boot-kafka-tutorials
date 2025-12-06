@@ -98,7 +98,7 @@ e.g. if we have 3 brokers and 1 topic with 3 partitions and `replication.factor=
 - Broker 3: Partition 2 (Leader), Partition 0 (Follower)
 - Here, each partition has one leader and one follower replica. If Broker 1 goes down, Partition 0's leader role will be taken over by its follower replica on Broker 3. 
 
-If we send 1st message, it will go to Partition 0 (Leader) on Broker 1. Then if we send a 2nd message, it will go to Partition 1 (Leader) on Broker 2 and so on. The rotation continues for subsequent messages. This is how Kafka achieves load balancing across partitions.
+If we send 1st message, it will go to Partition 0 (Leader) on Broker 1. Then, if we send a 2nd message, it will go to Partition 1 (Leader) on Broker 2 and so on. The rotation continues for subsequent messages. This is how Kafka achieves load balancing across partitions.
 
 `replication.factor=3` means three copies on three brokers. It means that if one broker goes down, there are still two copies available. No of brokers must be >= replication factor.
 
@@ -126,7 +126,7 @@ If we send 1st message, it will go to Partition 0 (Leader) on Broker 1. Then if 
 ### Zookeeper & Broker
 
 <details>
-<summary><b>Click to expand</b></summary>
+<summary>Click to expand</summary>
 `Zookeeper` - Acts a Kafka cluster coordinator that manages cluster membership of brokers, producers, and consumers
 participating in message transfers via Kafka. It also helps in leader election for a Kafka topic.
 
@@ -179,7 +179,7 @@ Start up the Kafka Broker. We will run THREE brokers based on our own server pro
 ### Migrating from Zookeeper to KRaft
 
 <details>
-<summary><b>Click to expand</b></summary>
+<summary>Click to expand</summary>
 
 - KRaft (Kafka Raft) mode is a new way of running Apache Kafka without the need for an external ZooKeeper cluster. KRaft mode uses an internal consensus protocol based on the Raft algorithm to manage metadata and coordinate brokers in the Kafka cluster.
 - KRaft mode simplifies Kafka deployment and management by eliminating the need for a separate ZooKeeper cluster. It also improves scalability and fault tolerance by allowing Kafka brokers to manage their own metadata and coordinate directly with each other.
