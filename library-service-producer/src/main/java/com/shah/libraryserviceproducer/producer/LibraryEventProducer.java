@@ -15,6 +15,7 @@ import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Component
 @Slf4j
@@ -37,18 +38,14 @@ public class LibraryEventProducer {
         Integer key = libraryEvent.getLibraryEventId();
         String value = objectMapper.writeValueAsString(libraryEvent);
 
-        ListenableFuture<SendResult<Integer, String>> listenableFuture = kafkaTemplate.sendDefault(key, value);
-        listenableFuture.addCallback(new ListenableFutureCallback<SendResult<Integer, String>>() {
-            @Override
-            public void onFailure(Throwable ex) {
-                handleFailure(key, value, ex);
-            }
-
-            @Override
-            public void onSuccess(SendResult<Integer, String> result) {
-                handleSuccess(key, value, result);
-            }
-        });
+        kafkaTemplate.sendDefault(key, value)
+                .whenComplete((result, ex) -> {
+                    if (ex != null) {
+                        handleFailure(key, value, ex);
+                    } else {
+                        handleSuccess(key, value, result);
+                    }
+                });
     }
 
     /**
@@ -62,27 +59,22 @@ public class LibraryEventProducer {
         String value = objectMapper.writeValueAsString(libraryEvent);
 
         ProducerRecord<Integer, String> producerRecord = buildProducerRecord(key, value, TOPIC);
-        ListenableFuture<SendResult<Integer, String>> listenableFuture = kafkaTemplate.send(producerRecord);
-
-        listenableFuture.addCallback(new ListenableFutureCallback<SendResult<Integer, String>>() {
-            @Override
-            public void onFailure(Throwable ex) {
-                handleFailure(key, value, ex);
-            }
-
-            @Override
-            public void onSuccess(SendResult<Integer, String> result) {
-                handleSuccess(key, value, result);
-            }
-        });
+        kafkaTemplate.send(producerRecord)
+                .whenComplete((result, ex) -> {
+                    if (ex != null) {
+                        handleFailure(key, value, ex);
+                    } else {
+                        handleSuccess(key, value, result);
+                    }
+                });
     }
 
     /**
-     * @description We can also add record headers when sending event. Record headers give you the ability to add some metadata about the Kafka record, without adding any extra information to the key/value pair of the record itself. Consider if you wanted to embed some information in a message, such as an identifier for the system from which the data originated
      * @param key
      * @param value
      * @param topic
      * @return
+     * @description We can also add record headers when sending event. Record headers give you the ability to add some metadata about the Kafka record, without adding any extra information to the key/value pair of the record itself. Consider if you wanted to embed some information in a message, such as an identifier for the system from which the data originated
      */
     private ProducerRecord<Integer, String> buildProducerRecord(Integer key, String value, String topic) {
         List<Header> recordHeaders = List.of(new RecordHeader("event-source", "scanner".getBytes()));
