@@ -20,12 +20,12 @@ A record (also called a message) is the basic unit of data in Kafka. A record ty
 
 <details>
 <summary><b>Topic</b></summary>
-A topic is a named, logical stream of records in Kafka (Think DB table). Producers publish records to a topic and consumers read from a topic. Topics are multi-subscriber: multiple consumer groups can read the same topic independently. Ordering is only guaranteed within a single partition of a topic, not across the whole topic. Use a message key to send related messages to the same partition when you need ordering.
+A topic is a named, logical stream of records in Kafka (Think DB image). Producers publish records to a topic and consumers read from a topic. Topics are multi-subscriber: multiple consumer groups can read the same topic independently. Ordering is only guaranteed within a single partition of a topic, not across the whole topic. Use a message key to send related messages to the same partition when you need ordering.
 </details>
 
 <details>
 <summary><b>Partition</b></summary>
-A partition is an ordered, immutable sequence of records within a topic (a commit log). Partitions provide parallelism and ordering: records are strictly ordered only inside a partition and are addressed by a monotonically increasing offset. When creating a topic you choose the number of partitions and the replication factor. Kafka distributes a topic's partitions across the brokers in the cluster to scale throughput and availability.
+A partition is an ordered, immutable sequence of records within a topic (a commit log). Think multiple instances of DB. Partitions provide parallelism and ordering: records are strictly ordered only inside a partition and are addressed by a monotonically increasing offset. When creating a topic you choose the number of partitions and the replication factor. Kafka distributes a topic's partitions across the brokers in the cluster to scale throughput and availability.
 </details>
 
 <details>
@@ -56,15 +56,23 @@ How brokers and topics relate (example):
 
 [Further reading](https://medium.com/@youssefali6212/apache-kafka-study-notes-3-zookeeper-vs-kraft-8eb683a8f6aa)
 
-
 </details>
 
 <details>
 <summary><b>Consumer group</b></summary>
 
+`Consumer groups`
+Kafka has the concept of consumer groups where several consumers are grouped to consume a given topic. Consumers in the same consumer group are assigned the same group-id value.
+
+The consumer group concept ensures that a message is only ever read by a single consumer in the group.
+
+When a consumer group consumes the partitions of a topic, Kafka makes sure that each partition is consumed by exactly one consumer in the group
+
+
 - Consumer group is a bunch of consumers that form a group in order to cooperate and consume messages from a set of topics.  
 - Consumer groups are formed when you have multiple instances of the same application.
 - Consumer groups are the foundation for scalable message consumption.
+- Number of consumers in a consumer group should ideally match the number of partitions for optimal consumption.
 
 Example: 
 If two consumers have subscribed to the same topic and are present in the same consumer group, then these two consumers would be assigned a different set of partitions and none of these two consumers would receive the same messages.
@@ -77,6 +85,16 @@ Example 2:
 
 ![Image](https://miro.medium.com/v2/resize:fit:720/format:webp/1*INW2vHXkN7v47-WvrgbhbA.png)
 
+*******************************  
+
+![Image](./library-service-producer/src/main/resources/consumer-group3.png)
+
+*******************************  
+
+![Image](./library-service-producer/src/main/resources/consumer-group.png)
+
+*******************************
+
 [Further reading](https://medium.com/javarevisited/kafka-partitions-and-consumer-groups-in-6-mins-9e0e336c6c00)
 
 </details>
@@ -84,7 +102,17 @@ Example 2:
 <details>
 <summary><b>Replication Factor & In-Sync Replicas</b></summary>
 
-`Replication factor` — number of copies of each partition stored across brokers. `replication.factor=1` means a single copy; `replication.factor=3` means three copies on three brokers.
+`Replication factor` — number of copies of each partition stored across brokers. `replication.factor=1` means a single copy;
+
+e.g. if we have 3 brokers and 1 topic with 3 partitions and `replication.factor=2`, the partitions will be distributed as follows:
+- Broker 1: Partition 0 (Leader), Partition 1 (Follower)
+- Broker 2: Partition 1 (Leader), Partition 2 (Follower)
+- Broker 3: Partition 2 (Leader), Partition 0 (Follower)
+- Here, each partition has one leader and one follower replica. If Broker 1 goes down, Partition 0's leader role will be taken over by its follower replica on Broker 3. 
+
+If we send 1st message, it will go to Partition 0 (Leader) on Broker 1. Then if we send a 2nd message, it will go to Partition 1 (Leader) on Broker 2 and so on. The rotation continues for subsequent messages. This is how Kafka achieves load balancing across partitions.
+
+`replication.factor=3` means three copies on three brokers. It means that if one broker goes down, there are still two copies available. No of brokers must be >= replication factor.
 
 `min.insync.replicas` — minimum number of replicas that must be in the ISR (in-sync replicas) for the broker to accept writes when the producer uses `acks=all`. If the number of in-sync replicas falls below this value, writes with `acks=all` will be rejected.
 
@@ -93,19 +121,6 @@ Example 2:
 `Trade-off` - increasing `min.insync.replicas` improves durability and consistency but reduces availability (more chance writes are rejected during outages).
 
 </details>
-
-`Consumer groups`
-Kafka has the concept of consumer groups where several consumers are grouped to consume a given topic. Consumers in the same consumer group are assigned the same group-id value.
-
-The consumer group concept ensures that a message is only ever read by a single consumer in the group.
-
-When a consumer group consumes the partitions of a topic, Kafka makes sure that each partition is consumed by exactly one consumer in the group
-
-![Image](./library-service-producer/src/main/resources/consumer-group3.png)
-
-*******************************  
-
-![Image](./library-service-producer/src/main/resources/consumer-group.png)
 
 ### Setting up kafka
 
@@ -122,12 +137,16 @@ When a consumer group consumes the partitions of a topic, Kafka makes sure that 
 
 ### Zookeeper & Broker
 
+<details>
+<summary><b>Click to expand</b></summary>
 `Zookeeper` - Acts a Kafka cluster coordinator that manages cluster membership of brokers, producers, and consumers
 participating in message transfers via Kafka. It also helps in leader election for a Kafka topic.
 
 `Broker` - A single Kafka server is called a Kafka Broker. A Kafka broker allows consumers to fetch messages by topic,
 partition and offset. Kafka brokers can create a Kafka cluster by sharing information between each other directly or
 indirectly using Zookeeper. A Kafka cluster has exactly one broker that acts as the Controller.
+
+</details>
 
 ### Start Zookeeper & Broker
 
