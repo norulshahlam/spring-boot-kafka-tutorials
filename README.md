@@ -92,13 +92,14 @@ Example 2:
 
 `Replication factor` — number of copies of each partition stored across brokers. `replication.factor=1` means a single copy;
 
-e.g. if we have 3 brokers and 1 topic with 3 partitions and `replication.factor=2`, the partitions will be distributed as follows:
+e.g. if we have 3 brokers and 1 topic with 3 partitions and `replication.factor=3`, the partitions will be distributed as follows:
 - Broker 1: Partition 0 (Leader), Partition 1 (Follower)
 - Broker 2: Partition 1 (Leader), Partition 2 (Follower)
 - Broker 3: Partition 2 (Leader), Partition 0 (Follower)
 - Here, each partition has one leader and one follower replica. If Broker 1 goes down, Partition 0's leader role will be taken over by its follower replica on Broker 3. 
 
-If we send 1st message, it will go to Partition 0 (Leader) on Broker 1. Then, if we send a 2nd message, it will go to Partition 1 (Leader) on Broker 2 and so on. The rotation continues for subsequent messages. This is how Kafka achieves load balancing across partitions.
+If we send 1st message, it will go to Partition 0 (Leader) on Broker 1. Then, 
+if we send 2nd message, it will go to Partition 1 (Leader) on Broker 2 and so on. The rotation continues for subsequent messages. This is how Kafka achieves load balancing across partitions.
 
 `replication.factor=3` means three copies on three brokers. It means that if one broker goes down, there are still two copies available. No of brokers must be >= replication factor.
 
