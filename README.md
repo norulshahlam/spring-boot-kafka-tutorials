@@ -47,18 +47,6 @@ How brokers and topics relate (example):
 
 
 <details>
-<summary><b>Migrating from Zookeeper to KRaft</b></summary>
-
-- KRaft (Kafka Raft) mode is a new way of running Apache Kafka without the need for an external ZooKeeper cluster. KRaft mode uses an internal consensus protocol based on the Raft algorithm to manage metadata and coordinate brokers in the Kafka cluster.
-- KRaft mode simplifies Kafka deployment and management by eliminating the need for a separate ZooKeeper cluster. It also improves scalability and fault tolerance by allowing Kafka brokers to manage their own metadata and coordinate directly with each other.
-- KRaft mode is available in Apache Kafka 2.8.0 and later versions. To use KRaft mode, you need to configure your Kafka brokers to run in KRaft mode and set up a KRaft controller quorum.
-- KRaft mode is still a relatively new feature in Apache Kafka, and it may not be suitable for all use cases. It is recommended to carefully evaluate the benefits and drawbacks of KRaft mode before migrating from ZooKeeper to KRaft.
-
-[Further reading](https://medium.com/@youssefali6212/apache-kafka-study-notes-3-zookeeper-vs-kraft-8eb683a8f6aa)
-
-</details>
-
-<details>
 <summary><b>Consumer group</b></summary>
 
 `Consumer groups`
@@ -187,6 +175,21 @@ Start up the Kafka Broker. We will run THREE brokers based on our own server pro
     kafka-server-start.bat ..\..\config\server-3.properties
 
 </details>
+
+### Migrating from Zookeeper to KRaft
+
+<details>
+<summary><b>Click to expand</b></summary>
+
+- KRaft (Kafka Raft) mode is a new way of running Apache Kafka without the need for an external ZooKeeper cluster. KRaft mode uses an internal consensus protocol based on the Raft algorithm to manage metadata and coordinate brokers in the Kafka cluster.
+- KRaft mode simplifies Kafka deployment and management by eliminating the need for a separate ZooKeeper cluster. It also improves scalability and fault tolerance by allowing Kafka brokers to manage their own metadata and coordinate directly with each other.
+- KRaft mode is available in Apache Kafka 2.8.0 and later versions. To use KRaft mode, you need to configure your Kafka brokers to run in KRaft mode and set up a KRaft controller quorum.
+- KRaft mode is still a relatively new feature in Apache Kafka, and it may not be suitable for all use cases. It is recommended to carefully evaluate the benefits and drawbacks of KRaft mode before migrating from ZooKeeper to KRaft.
+
+[Further reading](https://medium.com/@youssefali6212/apache-kafka-study-notes-3-zookeeper-vs-kraft-8eb683a8f6aa)
+
+</details>
+
 
 ### Set up producer in Spring Boot
 
