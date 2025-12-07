@@ -192,8 +192,14 @@ Start up the Kafka Broker. We will run THREE brokers based on our own server pro
 
 <details>
 <summary>Click to expand</summary><br>
- 
-Start the consumer service in your IDE. The `application.properties` has everything you need to connect to the Kafka brokers. When you start to send message from the producer, you should be able to see the messages received in the consumer console.
+
+Start the consumer service in your IDE. The `application.properties` has everything you need to connect to the Kafka brokers. There are 3 main things we need to consider in the consumer application.properties file
+
+- key-serializer
+- value-deserializer
+- group-id
+
+When you start to send message from the producer, you should be able to see the messages received in the consumer console.
 
 </details>
 
@@ -228,14 +234,6 @@ This is the default method for sending event. The method sendEevent() doesn't re
 This uses the send() method which require to insert topic name as the argument. Also it uses key to send message. If we have a key, the message will be sent through the same partition. This is really important for the ordering of the events because Kafka guarantees ordering only at the partition level. To see the difference, see which partition is used in the logs. those with key will be using the same partition.
 
 </details>
-
-### Create Spring boot consumer
-
-There are 3 main things we need to configure
-
-- key-serializer
-- value-deserializer
-- group-id
 
 ### What is Rebalance?
 
