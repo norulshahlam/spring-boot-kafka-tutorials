@@ -304,7 +304,7 @@ Since we have 3 brokers running, it will be distributed among the 2 instances.
 
 Run docker command:
 ```bash
-    docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true ghcr.io/kafbat/kafka-ui
+    docker run -it -p 8088:8080 -e DYNAMIC_CONFIG_ENABLED=true ghcr.io/kafbat/kafka-ui
 ```
 
 - Conduktor (https://www.conduktor.io/) - A desktop application for managing and monitoring Apache Kafka clusters. It provides a user-friendly interface for browsing topics, partitions, and messages, as well as monitoring consumer groups and offsets.
