@@ -188,46 +188,34 @@ Start up the Kafka Broker. We will run THREE brokers based on our own server pro
 
 </details>
 
-
-### Set up producer in Spring Boot
+### Start up consumer in Spring Boot
 
 <details>
 <summary>Click to expand</summary><br>
-
-1. Create endpoint
-2. Create topic - library-events
+ 
+Start the consumer service in your IDE. The `application.properties` has everything you need to connect to the Kafka brokers. When you start to send message from the producer, you should be able to see the messages received in the consumer console.
 
 </details>
 
-### Start up consumer using jar
+### Start up consumer in Spring Boot snd send message via Spring Boot producer
 
 <details>
 <summary>Click to expand</summary><br>
 
-In bin/windows folder run this to start consumer:  
-Without key:
+Run the producer service in your IDE and go start sending message via Postman or curl command
 
-    kafka-console-producer.bat --bootstrap-server localhost:9092 --topic library-events
-
-</details>
-
-### Sent your first message thru Spring Boot producer!
-
-<details>
-<summary>Click to expand</summary><br>
-
-POST `http://localhost:8080/v1/libraryevent`
-
-    {
+```bash
+    curl -X  POST -H "Content-Type: application/json" -d '{
         "libraryEventId":null,
         "book":{
             "bookId":2,
             "bookName":"abc",
             "bookAuthor":"zzzfff"
         }
-    }
+    }' http://localhost:8080/v1/libraryevent
+```
+
 Postman collections: [Click here](./library-service-producer/src/main/resources/kafka-tutorials.postman_collection.json)
-</details>
 
 You should be able to receive message from your consumer console. Note that there are 2 diff methods
 
@@ -238,6 +226,8 @@ This is the default method for sending event. The method sendEevent() doesn't re
     sendNewEventWithDefinedTopic()
 
 This uses the send() method which require to insert topic name as the argument. Also it uses key to send message. If we have a key, the message will be sent through the same partition. This is really important for the ordering of the events because Kafka guarantees ordering only at the partition level. To see the difference, see which partition is used in the logs. those with key will be using the same partition.
+
+</details>
 
 ### Create Spring boot consumer
 
