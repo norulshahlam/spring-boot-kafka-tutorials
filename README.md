@@ -3,15 +3,18 @@
 [Reference #1](https://www.udemy.com/course/spring-boot-microservices-and-spring-cloud/)  
 [Reference #2](https://www.udemy.com/course/kafka-fundamentals-for-java-developers/)  
 [Reference #2](https://stackoverflow.com/questions/38024514/understanding-kafka-topics-and-partitions)  
+
 *******************************
+
 ### Architecture
 
 ![Image](./library-service-producer/src/main/resources/kafka-architecture.png)
 
 ************************
-### Terminologies
 
 ![Image](./library-service-producer/src/main/resources/record-partition-topic.png)
+
+### Terminologies
 
 <details>
 <summary><b>Record</b></summary>
