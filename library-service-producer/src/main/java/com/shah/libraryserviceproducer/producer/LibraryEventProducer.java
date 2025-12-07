@@ -2,7 +2,10 @@ package com.shah.libraryserviceproducer.producer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.shah.libraryserviceproducer.domain.Book;
 import com.shah.libraryserviceproducer.domain.LibraryEvent;
+import com.shah.libraryserviceproducer.domain.LibraryEventType;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.header.Header;
@@ -10,6 +13,8 @@ import org.apache.kafka.common.header.internals.RecordHeader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
@@ -19,6 +24,7 @@ import java.util.concurrent.CompletableFuture;
 
 @Component
 @Slf4j
+@EnableScheduling
 public class LibraryEventProducer {
 
     @Autowired
@@ -92,5 +98,23 @@ public class LibraryEventProducer {
 
     private void handleSuccess(Integer key, String value, SendResult<Integer, String> result) {
         log.info("Message Sent SuccessFully for the key : {} and the value is {} , partition is {}", key, value, result.getRecordMetadata().partition());
+    }
+
+    // create sample event
+//    @Scheduled(fixedRate = 1000)
+    public void sendSampleEvent() throws JsonProcessingException {
+        int libraryEventId = (int) (Math.random() * 1000);
+        LibraryEvent libraryEvent = LibraryEvent.builder()
+                .libraryEventId(libraryEventId)
+                .libraryEventType(LibraryEventType.NEW)
+                .book(Book.builder()
+                        .bookId(libraryEventId)
+                        // Generate random book name
+                        .bookName("Book-" + libraryEventId)
+                        .bookAuthor("Dilip Shah")
+                        .build())
+                .build();
+        ProducerRecord<Integer, String> record = buildProducerRecord(libraryEvent.getLibraryEventId(), objectMapper.writeValueAsString(libraryEvent), TOPIC);
+        kafkaTemplate.send(record);
     }
 }

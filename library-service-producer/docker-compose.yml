@@ -100,3 +100,8 @@ services:
 networks:
   kafka-net:
     driver: bridge
+
+# in error run this command to remove all containers and volumes
+#  docker compose down -v
+# rm -rf volumes/kafka-1-data volumes/kafka-2-data volumes/kafka-3-data
+# docker compose up
