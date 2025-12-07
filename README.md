@@ -218,7 +218,17 @@ Run the producer service in your IDE and go start sending message via Postman or
             "bookName":"abc",
             "bookAuthor":"zzzfff"
         }
-    }' http://localhost:8080/v1/libraryevent
+    }' http://localhost:8080/v1/new-library-event-with-defined-topic
+```
+```bash
+    curl -X  POST -H "Content-Type: application/json" -d '{
+        "libraryEventId":null,
+        "book":{
+            "bookId":2,
+            "bookName":"abc",
+            "bookAuthor":"zzzfff"
+        }
+    }' http://localhost:8080/v1/new-library-event-with-default-topic
 ```
 
 Postman collections: [Click here](./library-service-producer/src/main/resources/kafka-tutorials.postman_collection.json)
