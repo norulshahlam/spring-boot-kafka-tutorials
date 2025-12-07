@@ -111,16 +111,13 @@ if we send 2nd message, it will go to Partition 1 (Leader) on Broker 2 and so on
 
 </details>
 
-### Setting up kafka
-
+## Starting up your project
+***
+### Setting up kafka brokers
 <details>
 <summary>Click to expand</summary><br>
 
-1. Download Kafka BINARY file from `https://kafka.apache.org/downloads`
-2. If you are using Windows, use cmd and run `tar -xvzf kafka-3.3.1-src.tgz`
-3. Rename the folder to shorter name (for Windows)
-4. List of command can be
-   found [HERE](https://github.com/dilipsundarraj1/kafka-for-developers-using-spring-boot/blob/master/SetUpKafka.md)
+We will be using Docker to run Kafka brokers. Make sure you have Docker installed in your machine. Then run `docker compose up` in library-service-producer/docker-compose.yml. It has everything you need to run 3 Kafka brokers with quorum configured.
 
 </details>
 
@@ -137,7 +134,7 @@ indirectly using Zookeeper. A Kafka cluster has exactly one broker that acts as 
 
 </details>
 
-### Start Zookeeper & Broker
+### Start Zookeeper & Broker (deprecated)
 
 <details>
 <summary>Click to expand</summary><br>
