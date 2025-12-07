@@ -117,7 +117,7 @@ if we send 2nd message, it will go to Partition 1 (Leader) on Broker 2 and so on
 <details>
 <summary>Click to expand</summary><br>
 
-We will be using Docker to run Kafka brokers. Make sure you have Docker installed in your machine. Then run `docker compose up` in library-service-producer/docker-compose.yml. It has everything you need to run 3 Kafka brokers with quorum configured.
+We will be using Docker to run Kafka brokers. Make sure you have Docker installed in your machine. Then run `docker compose up` in library-service-producer/docker-compose.yml. It has everything you need to run 3 Kafka brokers with quorum configured. Also, it has Kafbat UI included for visualizing topics, events, and consumer groups.
 
 </details>
 
@@ -297,6 +297,8 @@ Since we have 3 brokers running, it will be distributed among the 2 instances.
 <summary>Click to expand</summary><br>
 
 [Reference](https://www.reddit.com/r/apachekafka/comments/1dcet0g/what_tools_do_you_use_for_visualizing_kafka/)  
+
+Our docker-compose.yml already has `kafbat.ui` included. You can access it via http://localhost:8088
 
 - Kafka Tool (http://www.kafkatool.com/) - A GUI application for managing and using Apache Kafka clusters. It provides an easy-to-use interface for browsing Kafka topics, partitions, and messages.
 
