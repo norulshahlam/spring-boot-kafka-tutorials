@@ -2,6 +2,7 @@ package com.shah.libraryserviceproducer.producer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.javafaker.Faker;
 import com.shah.libraryserviceproducer.domain.Book;
 import com.shah.libraryserviceproducer.domain.LibraryEvent;
 import com.shah.libraryserviceproducer.domain.LibraryEventType;
@@ -103,15 +104,15 @@ public class LibraryEventProducer {
     // create sample event
 //    @Scheduled(fixedRate = 1000)
     public void sendSampleEvent() throws JsonProcessingException {
+        Faker faker = new Faker();
         int libraryEventId = (int) (Math.random() * 1000);
         LibraryEvent libraryEvent = LibraryEvent.builder()
                 .libraryEventId(libraryEventId)
                 .libraryEventType(LibraryEventType.NEW)
                 .book(Book.builder()
                         .bookId(libraryEventId)
-                        // Generate random book name
-                        .bookName("Book-" + libraryEventId)
-                        .bookAuthor("Dilip Shah")
+                        .bookName(faker.book().title() + " - " + libraryEventId)
+                        .bookAuthor(faker.book().author())
                         .build())
                 .build();
         ProducerRecord<Integer, String> record = buildProducerRecord(libraryEvent.getLibraryEventId(), objectMapper.writeValueAsString(libraryEvent), TOPIC);
