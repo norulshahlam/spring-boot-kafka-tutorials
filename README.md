@@ -12,8 +12,6 @@
 
 ************************
 
-![Image](./library-service-producer/src/main/resources/record-partition-topic.png)
-
 ### Terminologies
 
 <details>
