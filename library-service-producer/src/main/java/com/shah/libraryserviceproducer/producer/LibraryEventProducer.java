@@ -47,7 +47,7 @@ public class LibraryEventProducer {
         kafkaTemplate.sendDefault(key, value)
                 .whenComplete((result, ex) -> {
                     if (ex != null) {
-                        handleFailure(key, value, ex);
+                        handleFailure(ex);
                     } else {
                         handleSuccess(key, value, result);
                     }
@@ -68,7 +68,7 @@ public class LibraryEventProducer {
         kafkaTemplate.send(producerRecord)
                 .whenComplete((result, ex) -> {
                     if (ex != null) {
-                        handleFailure(key, value, ex);
+                        handleFailure(ex);
                     } else {
                         handleSuccess(key, value, result);
                     }
@@ -87,7 +87,7 @@ public class LibraryEventProducer {
         return new ProducerRecord<>(topic, null, key, value, recordHeaders);
     }
 
-    private void handleFailure(Integer key, String value, Throwable ex) {
+    private void handleFailure(Throwable ex) {
         log.error("Error Sending the Message and the exception is {}", ex.getMessage());
         try {
             throw ex;
@@ -97,7 +97,7 @@ public class LibraryEventProducer {
     }
 
     private void handleSuccess(Integer key, String value, SendResult<Integer, String> result) {
-        log.info("Message Sent SuccessFully for the key : {} and the value is {} , partition is {}", key, value, result.getRecordMetadata().partition());
+        log.info("Message Sent SuccessFully for the key [{}] for value: [{}], and partition [{}]", key, value, result.getRecordMetadata().partition());
     }
 
     // create sample event
