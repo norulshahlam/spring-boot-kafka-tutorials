@@ -1,0 +1,26 @@
+@startuml
+
+actor Client
+
+Client -> ServiceA: POST /payment
+activate ServiceA
+
+ServiceA -> DB: Insert PENDING into payment_transaction
+DB --> ServiceA: OK
+
+ServiceA -> Kafka: Produce topic.payment.request
+Kafka --> ServiceA: OK
+
+ServiceA -> ServiceC: POST /risk-score
+activate ServiceC
+ServiceC --> ServiceA: timeout or error
+deactivate ServiceC
+
+ServiceA -> DB: Rollback transaction
+ServiceA -> Kafka: Rollback transaction
+deactivate ServiceA
+
+Kafka -> ServiceB: No messages delivered
+ServiceB -> DB: No update
+
+@enduml
