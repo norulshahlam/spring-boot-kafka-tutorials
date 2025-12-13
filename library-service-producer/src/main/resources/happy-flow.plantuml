@@ -1,0 +1,38 @@
+@startuml
+!theme toy
+title Payment Processing - Happy Flow
+autonumber
+actor Client
+
+Client -> ServiceA: POST /payment
+activate ServiceA
+
+ServiceA -> DB: Insert payment_transaction status PENDING
+DB --> ServiceA: OK
+
+ServiceA -> Kafka: Produce topic.payment.request
+Kafka --> ServiceA: OK
+
+ServiceA -> ServiceC: POST /risk-score
+activate ServiceC
+ServiceC --> ServiceA: OK
+deactivate ServiceC
+
+ServiceA -> Kafka: Produce topic.payment.validated
+Kafka --> ServiceA: OK
+
+ServiceA -> DB: Commit transaction
+ServiceA -> Kafka: Commit transaction
+deactivate ServiceA
+
+Kafka -> ServiceB: Consume topic.payment.request
+activate ServiceB
+ServiceB -> DB: Update payment_transaction status RECEIVED
+DB --> ServiceB: OK
+
+Kafka -> ServiceB: Consume topic.payment.validated
+ServiceB -> DB: Update payment_transaction status COMPLETED
+DB --> ServiceB: OK
+deactivate ServiceB
+
+@enduml
