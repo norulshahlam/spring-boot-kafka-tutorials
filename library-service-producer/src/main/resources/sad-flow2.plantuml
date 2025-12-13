@@ -1,13 +1,13 @@
 @startuml
 !theme toy
-title Payment Processing - Happy Flow
+title Payment Processing - Failed First Attempt with Retry on consumer side
 autonumber
 actor Client
 
 Client -> ServiceA: POST /payment
 activate ServiceA
 
-ServiceA -> DB: Insert payment_transaction status \n<b>PENDING</b>
+ServiceA -> DB: Insert PENDING into payment_transaction
 DB --> ServiceA: OK
 
 ServiceA -> Kafka: Produce topic.payment.request
@@ -27,16 +27,20 @@ deactivate ServiceA
 
 Kafka -> ServiceB: Consume topic.payment.request
 activate ServiceB
-ServiceB -> DB: Update payment_transaction status \n<b>RECEIVED</b>
+ServiceB -> DB: Update status RECEIVED
 DB --> ServiceB: OK
 
 Kafka -> ServiceB: Consume topic.payment.validated
 ServiceB -> ServiceC: POST /confirm-risk
 activate ServiceC
-ServiceC --> ServiceB: OK
+ServiceC --> ServiceB: timeout or error
 deactivate ServiceC
 
-ServiceB -> DB: Update payment_transaction status \n<b>COMPLETED</b>
+ServiceB -> ServiceB: Retry REST call
+ServiceB -> ServiceC: POST /confirm-risk
+ServiceC --> ServiceB: OK
+
+ServiceB -> DB: Update status COMPLETED
 DB --> ServiceB: OK
 deactivate ServiceB
 

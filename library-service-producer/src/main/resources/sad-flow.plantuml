@@ -1,6 +1,6 @@
 @startuml
 !theme toy
-title Payment Processing - Sad Flow
+title Payment Processing - Failure on producer side
 autonumber
 actor Client
 
