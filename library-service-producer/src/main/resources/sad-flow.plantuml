@@ -1,5 +1,7 @@
 @startuml
-
+!theme toy
+title Payment Processing - Sad Flow
+autonumber
 actor Client
 
 Client -> ServiceA: POST /payment
