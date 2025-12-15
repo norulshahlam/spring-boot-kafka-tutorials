@@ -1,6 +1,6 @@
 @startuml
 !theme toy
-title Payment Processing - Failure on producer side
+title Payment Processing - Failure on producer side during REST call
 autonumber
 actor Client
 
@@ -10,7 +10,7 @@ activate ServiceA
 ServiceA -> DB: Insert PENDING into payment_transaction
 DB --> ServiceA: OK
 
-ServiceA -> Kafka: Produce topic.payment.request
+ServiceA -> Kafka: Produce payment-request topic
 Kafka --> ServiceA: OK
 
 ServiceA -> ServiceC: POST /risk-score
