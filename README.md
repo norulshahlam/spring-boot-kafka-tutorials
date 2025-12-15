@@ -315,3 +315,15 @@ Run docker command:
 - Kpow (https://factorhouse.io/kpow/) - A web-based Kafka monitoring and management tool. It allows users to view topics, partitions, and messages, as well as monitor consumer groups and offsets. Kpow provides real-time metrics and alerts for Kafka clusters.
 
 </details>
+
+### Trusted packges issue
+[Reference](https://stackoverflow.com/questions/51688924/spring-kafka-the-class-is-not-in-the-trusted-packages)  
+
+<details>
+<summary>Click to expand</summary><br>
+This error occurs because Spring Kafka's JsonDeserializer includes a security feature that prevents the deserialization of arbitrary classes unless they are explicitly "trusted". By default, only java.util and java.lang are trusted  
+
+If you are using Java object as value when producing message, either:
+- Create the class in a common service. This is automatically create a trusted package in header and when you consume it, the package name will be the same and will read successfully
+-  Set the value as `String` type. Convert to String before sending it. Then in consumer side, set the value to String, then convert back to your own class. This is useful when you are not the owner of the producer side, and dont have control over it. Or you simply dont want the hassle of creating another service just for common objects
+</details>
