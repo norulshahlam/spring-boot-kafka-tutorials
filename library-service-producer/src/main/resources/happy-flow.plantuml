@@ -18,7 +18,7 @@ activate ServiceC
 ServiceC --> ServiceA: OK
 deactivate ServiceC
 
-ServiceA -> Kafka: Produce payment-confirm topic
+ServiceA -> Kafka: Produce payment-confirmed topic
 Kafka --> ServiceA: OK
 
 ServiceA -> DB: Commit transaction
@@ -30,7 +30,7 @@ activate ServiceB
 ServiceB -> DB: Update payment_transaction status \n<b>RECEIVED</b>
 DB --> ServiceB: OK
 
-Kafka -> ServiceB: Consume payment-confirm topic
+Kafka -> ServiceB: Consume payment-confirmed topic
 ServiceB -> ServiceC: POST /confirm-risk
 activate ServiceC
 ServiceC --> ServiceB: OK
