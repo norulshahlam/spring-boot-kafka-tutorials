@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="76ec29d0-5f1e-489a-971c-66c09344d870" name="Changes" comment="move class">
+      <change afterPath="$PROJECT_DIR$/../payment-consumer-service/src/main/java/com/example/PaymentConsumerService/impl/EventServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payment-consumer-service/src/main/java/com/example/PaymentConsumerService/service/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payment-consumer-service/src/main/java/com/example/PaymentConsumerService/handler/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../payment-consumer-service/src/main/java/com/example/PaymentConsumerService/handler/EventHandler.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="module" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../payment-consumer-service" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;norulshahlam&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/norulshahlam/spring-boot-kafka-tutorials.git&quot;,
+    &quot;accountId&quot;: &quot;31d9ce00-7be6-488d-a597-1c7bf8ccd001&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="36BMZdXnpttXS6SFDbQoBNorPEx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.LibraryServiceConsumerApplication.executor": "Run",
+    "Application.LibraryServiceProducerApplication.executor": "Run",
+    "Application.PaymentConsumerServiceApplication.executor": "Run",
+    "Application.PaymentProducerServiceApplication.executor": "Run",
+    "Application.RiskScoringServiceApplication.executor": "Run",
+    "Docker.library-service-producer: Compose Deployment.executor": "Run",
+    "JUnit.Luxoft.contextLoads.executor": "Run",
+    "JUnit.Luxoft.executor": "Run",
+    "JUnit.LuxoftTest.contextLoads.executor": "Run",
+    "JUnit.LuxoftTest.executor": "Run",
+    "JUnit.SuperKeyword2.test1.executor": "Run",
+    "JUnit.SuperKeyword2.test2.executor": "Run",
+    "JUnit.SuperKeyword2.test4.executor": "Run",
+    "Maven.DepositService [install].executor": "Run",
+    "Maven.WithdrawalService [install].executor": "Run",
+    "Maven.core [install].executor": "Run",
+    "Maven.payment-consumer-service [install].executor": "Run",
+    "Maven.risk-scoring-service [install].executor": "Run",
+    "Maven.transfers [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/NORUL/IdeaProjects/risk-scoring-service/src/main/java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.PaymentProducerService.dto" />
+      <recent name="com.example.PaymentProducerService.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\NORUL\IdeaProjects\risk-scoring-service\src\main\java" />
+      <recent name="C:\Users\NORUL\IdeaProjects\payment-consumer-service\src\main\java\com\example\PaymentConsumerService" />
+      <recent name="C:\Users\NORUL\IdeaProjects\payment-consumer-service\src\main\java\com\example\PaymentConsumerService\events" />
+      <recent name="C:\Users\NORUL\IdeaProjects\payment-producer-service\src\main\resources" />
+      <recent name="C:\Users\NORUL\IdeaProjects\payment-producer-service\src\main\java\com\example\PaymentProducerService" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.PaymentConsumerService.config" />
+      <recent name="com.example.PaymentProducerService.events" />
+      <recent name="com.example.PaymentProducerService.error" />
+      <recent name="com.example.RiskScoringService" />
+      <recent name="com.example.PaymentProducerService.repository" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.RiskScoringServiceApplication">
+    <configuration name="LibraryServiceConsumerApplication" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shah.libraryserviceconsumer.LibraryServiceConsumerApplication" />
+      <module name="library-service-consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shah.libraryserviceconsumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LibraryServiceProducerApplication" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shah.libraryserviceproducer.LibraryServiceProducerApplication" />
+      <module name="library-service-producer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shah.libraryserviceproducer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentConsumerServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.PaymentConsumerService.PaymentConsumerServiceApplication" />
+      <module name="payment-consumer-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.PaymentConsumerService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentProducerServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.PaymentProducerService.PaymentProducerServiceApplication" />
+      <module name="payment-producer-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.PaymentProducerService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RiskScoringServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.RiskScoringService.RiskScoringServiceApplication" />
+      <module name="risk-scoring-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.RiskScoringServiceApplication" />
+      <item itemvalue="Application.PaymentConsumerServiceApplication" />
+      <item itemvalue="Application.PaymentProducerServiceApplication" />
+      <item itemvalue="Application.LibraryServiceConsumerApplication" />
+      <item itemvalue="Application.LibraryServiceProducerApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RiskScoringServiceApplication" />
+        <item itemvalue="Application.PaymentConsumerServiceApplication" />
+        <item itemvalue="Application.PaymentProducerServiceApplication" />
+        <item itemvalue="Application.LibraryServiceConsumerApplication" />
+        <item itemvalue="Application.LibraryServiceProducerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76ec29d0-5f1e-489a-971c-66c09344d870" name="Changes" comment="" />
+      <created>1764475567741</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764475567741</updated>
+    </task>
+    <task id="LOCAL-00045" summary="feat: add health checks for Kafka services and update container names">
+      <option name="closed" value="true" />
+      <created>1765536855263</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1765536855263</updated>
+    </task>
+    <task id="LOCAL-00046" summary="feat: add health checks for Kafka services and update container names">
+      <option name="closed" value="true" />
+      <created>1765537397165</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1765537397165</updated>
+    </task>
+    <task id="LOCAL-00047" summary="feat: add health checks for Kafka services and update container names">
+      <option name="closed" value="true" />
+      <created>1765577447310</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1765577447310</updated>
+    </task>
+    <task id="LOCAL-00048" summary="feat: add health checks for Kafka services and update container names">
+      <option name="closed" value="true" />
+      <created>1765577561798</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1765577561798</updated>
+    </task>
+    <task id="LOCAL-00049" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765603591742</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1765603591742</updated>
+    </task>
+    <task id="LOCAL-00050" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765610904064</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1765610904064</updated>
+    </task>
+    <task id="LOCAL-00051" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765610932978</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1765610932978</updated>
+    </task>
+    <task id="LOCAL-00052" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765611034537</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1765611034537</updated>
+    </task>
+    <task id="LOCAL-00053" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765625324649</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1765625324649</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765714090218</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1765714090218</updated>
+    </task>
+    <task id="LOCAL-00055" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765714528528</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1765714528528</updated>
+    </task>
+    <task id="LOCAL-00056" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765714565139</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1765714565139</updated>
+    </task>
+    <task id="LOCAL-00057" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765724959745</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1765724959745</updated>
+    </task>
+    <task id="LOCAL-00058" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765725507061</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1765725507061</updated>
+    </task>
+    <task id="LOCAL-00059" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765727508857</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1765727508857</updated>
+    </task>
+    <task id="LOCAL-00060" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765730420068</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1765730420068</updated>
+    </task>
+    <task id="LOCAL-00061" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765730511933</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1765730511933</updated>
+    </task>
+    <task id="LOCAL-00062" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765730797335</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1765730797335</updated>
+    </task>
+    <task id="LOCAL-00063" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765731030940</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1765731030940</updated>
+    </task>
+    <task id="LOCAL-00064" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765731533085</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1765731533085</updated>
+    </task>
+    <task id="LOCAL-00065" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765731625183</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1765731625183</updated>
+    </task>
+    <task id="LOCAL-00066" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765731806874</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1765731806874</updated>
+    </task>
+    <task id="LOCAL-00067" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765732187917</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1765732187917</updated>
+    </task>
+    <task id="LOCAL-00068" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765733593402</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1765733593402</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765733787462</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1765733787462</updated>
+    </task>
+    <task id="LOCAL-00070" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765734289029</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1765734289029</updated>
+    </task>
+    <task id="LOCAL-00071" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765734498168</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1765734498168</updated>
+    </task>
+    <task id="LOCAL-00072" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765735303874</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1765735303874</updated>
+    </task>
+    <task id="LOCAL-00073" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765735335463</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1765735335463</updated>
+    </task>
+    <task id="LOCAL-00074" summary="added file">
+      <option name="closed" value="true" />
+      <created>1765736286623</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1765736286623</updated>
+    </task>
+    <task id="LOCAL-00075" summary="custom date convert in modelmapper">
+      <option name="closed" value="true" />
+      <created>1765759404284</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1765759404284</updated>
+    </task>
+    <task id="LOCAL-00076" summary="custom date convert in modelmapper">
+      <option name="closed" value="true" />
+      <created>1765759688689</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1765759688689</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Allow Jpa to auto generate ID">
+      <option name="closed" value="true" />
+      <created>1765762011383</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1765762011383</updated>
+    </task>
+    <task id="LOCAL-00078" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765773451884</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1765773451884</updated>
+    </task>
+    <task id="LOCAL-00079" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765773708133</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1765773708133</updated>
+    </task>
+    <task id="LOCAL-00080" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765774182335</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1765774182335</updated>
+    </task>
+    <task id="LOCAL-00081" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765779559451</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1765779559451</updated>
+    </task>
+    <task id="LOCAL-00082" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765791260240</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1765791260240</updated>
+    </task>
+    <task id="LOCAL-00083" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765791414066</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1765791414066</updated>
+    </task>
+    <task id="LOCAL-00084" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765791706579</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1765791706579</updated>
+    </task>
+    <task id="LOCAL-00085" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765792960245</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1765792960245</updated>
+    </task>
+    <task id="LOCAL-00086" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765794047997</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1765794047997</updated>
+    </task>
+    <task id="LOCAL-00087" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765795776221</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1765795776221</updated>
+    </task>
+    <task id="LOCAL-00088" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765798121116</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1765798121116</updated>
+    </task>
+    <task id="LOCAL-00089" summary="added 2nd topic">
+      <option name="closed" value="true" />
+      <created>1765806765841</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1765806765841</updated>
+    </task>
+    <task id="LOCAL-00090" summary="added common java object to solve trusted pacakges">
+      <option name="closed" value="true" />
+      <created>1765807440523</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1765807440523</updated>
+    </task>
+    <task id="LOCAL-00091" summary="added common java object to solve trusted pacakges">
+      <option name="closed" value="true" />
+      <created>1765807497336</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1765807497336</updated>
+    </task>
+    <task id="LOCAL-00092" summary="added common java object to solve trusted pacakges">
+      <option name="closed" value="true" />
+      <created>1765807571894</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1765807571894</updated>
+    </task>
+    <task id="LOCAL-00093" summary="move class">
+      <option name="closed" value="true" />
+      <created>1765810187735</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1765810187735</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Enhance README with detailed explanations of Kafka records and KRaft migration" />
+    <MESSAGE value="Add images to README for consumer group visualization" />
+    <MESSAGE value="Clarify explanations of replication factor and in-sync replicas in README" />
+    <MESSAGE value="chore: upgrade Spring Boot version to 3.2.8 and Java version to 21" />
+    <MESSAGE value="feat: enhance duplicate finding tests with large dataset generation" />
+    <MESSAGE value="feat: add .gitignore to exclude shelf and workspace.xml files" />
+    <MESSAGE value="docs: update README.md to clarify Kafka topics and consumer groups" />
+    <MESSAGE value="docs: reorganize KRaft migration section in README.md" />
+    <MESSAGE value="refactor: update SuperKeyword2 class and improve constructor tests" />
+    <MESSAGE value="feat: add Docker Compose configuration for Kafka services and environment variables" />
+    <MESSAGE value="feat: update docker-compose.yml for Kafka services with improved environment variables and volume mappings" />
+    <MESSAGE value="refactor: update application.yml configurations and upgrade dependencies in pom.xml" />
+    <MESSAGE value="refactor: clean up application.yml and update README for replication factor example" />
+    <MESSAGE value="refactor: update application.yml to modify server port configuration" />
+    <MESSAGE value="docs: update README to reflect new Kafka setup using Docker" />
+    <MESSAGE value="docs: update README to clarify Spring Boot consumer setup instructions" />
+    <MESSAGE value="fix: update server port to 8080 and modify API endpoint examples in README" />
+    <MESSAGE value="feat: add Kafbat UI service to docker-compose and update README for access instructions" />
+    <MESSAGE value="feat: add health checks for Kafka services and update container names" />
+    <MESSAGE value="added file" />
+    <MESSAGE value="custom date convert in modelmapper" />
+    <MESSAGE value="Allow Jpa to auto generate ID" />
+    <MESSAGE value="added 2nd topic" />
+    <MESSAGE value="added common java object to solve trusted pacakges" />
+    <MESSAGE value="move class" />
+    <option name="LAST_COMMIT_MESSAGE" value="move class" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/../payment-producer-service/src/main/java/com/example/PaymentProducerService/impl/PaymentServiceImpl.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/../payment-producer-service/src/main/java/com/example/PaymentProducerService/impl/PaymentServiceImpl.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/../payment-producer-service/src/main/java/com/example/PaymentProducerService/impl/PaymentServiceImpl.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/../payment-producer-service/src/main/java/com/example/PaymentProducerService/impl/PaymentServiceImpl.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/../payment-producer-service/src/main/java/com/example/PaymentProducerService/impl/PaymentServiceImpl.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/../payment-consumer-service/src/main/java/com/example/PaymentConsumerService/config/KafkaConsumerConfiguration.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
