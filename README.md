@@ -122,23 +122,18 @@ We will be using Docker to run Kafka brokers. Make sure you have Docker installe
 
 </details>
 
-### Zookeeper & Broker
+### Start Zookeeper & Broker (deprecated)
 
 <details>
-<summary>Click to expand</summary>
+<summary>Click to expand</summary><br>
+
+
 `Zookeeper` - Acts a Kafka cluster coordinator that manages cluster membership of brokers, producers, and consumers
 participating in message transfers via Kafka. It also helps in leader election for a Kafka topic.
 
 `Broker` - A single Kafka server is called a Kafka Broker. A Kafka broker allows consumers to fetch messages by topic,
 partition and offset. Kafka brokers can create a Kafka cluster by sharing information between each other directly or
-indirectly using Zookeeper. A Kafka cluster has exactly one broker that acts as the Controller.
-
-</details>
-
-### Start Zookeeper & Broker (deprecated)
-
-<details>
-<summary>Click to expand</summary><br>
+indirectly using Zookeeper. A Kafka cluster has exactly one broker that acts as the Controller.  
 
 1. Start up the Zookeeper. in bin/windows run:
 
