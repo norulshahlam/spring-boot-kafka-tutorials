@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$USER_HOME$/Downloads/kafka tutorials/DepositService/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Downloads/kafka tutorials/TransferService/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Downloads/kafka tutorials/WithdrawalService/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Downloads/kafka tutorials/core/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Downloads/kafka tutorials/mockservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../payment-consumer-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../payment-producer-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../permit-to-work-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../risk-scoring-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library-service-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library-service-producer/src/main/java" charset="UTF-8" />
+  </component>
+</project>

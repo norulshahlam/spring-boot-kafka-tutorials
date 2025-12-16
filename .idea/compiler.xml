@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="core" />
+        <module name="WithdrawalService" />
+        <module name="permit-to-work-api" />
+        <module name="DepositService" />
+        <module name="transfers" />
+        <module name="library-service-producer" />
+        <module name="library-service-consumer" />
+        <module name="mockservice" />
+      </profile>
+      <profile name="Annotation profile for Risk-Scoring-Service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="risk-scoring-service" />
+        <module name="payment-producer-service" />
+        <module name="payment-consumer-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="java-core-tutorials" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DepositService" options="-parameters" />
+      <module name="WithdrawalService" options="-parameters" />
+      <module name="core" options="-parameters" />
+      <module name="java-core-tutorials" options="-parameters" />
+      <module name="library-service-consumer" options="-parameters" />
+      <module name="library-service-producer" options="-parameters" />
+      <module name="mockservice" options="-parameters" />
+      <module name="payment-consumer-service" options="-parameters" />
+      <module name="payment-producer-service" options="-parameters" />
+      <module name="permit-to-work-api" options="-parameters" />
+      <module name="risk-scoring-service" options="-parameters" />
+      <module name="transfers" options="-parameters" />
+    </option>
+  </component>
+</project>

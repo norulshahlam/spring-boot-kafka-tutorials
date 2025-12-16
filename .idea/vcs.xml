@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$USER_HOME$/Downloads/kafka tutorials/DepositService" vcs="Git" />
+    <mapping directory="$USER_HOME$/Downloads/kafka tutorials/TransferService" vcs="Git" />
+    <mapping directory="$USER_HOME$/Downloads/kafka tutorials/WithdrawalService" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../payment-consumer-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../payment-producer-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../permit-to-work-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../risk-scoring-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+</project>
