@@ -7,37 +7,44 @@ actor Client
 Client -> ServiceA: POST /payment
 activate ServiceA
 
-ServiceA -> DB: Insert payment_transaction status \n<b>PENDING</b>
-DB --> ServiceA: OK
+ServiceA -> DB++: Insert payment_transaction status \n<b>PENDING</b>
+DB --> ServiceA--: OK
 
-ServiceA -> Kafka: Produce payment-request topic
-Kafka --> ServiceA: OK
+ServiceA -> Kafka: Produce payment-request topic (Uncommitted)
 
 ServiceA -> ServiceC: GET /risk-score
-activate ServiceC
-ServiceC --> ServiceA: OK
-deactivate ServiceC
+alt No Response
+    activate ServiceC
+    ServiceC --> ServiceA: timeout or error <b>(No Response)</b>
+    ServiceA -> DB: Rollback transaction
+    ServiceA -> Kafka: Rollback transaction
+    ServiceA -> Client: END
+    deactivate ServiceA
+else Success response
+    ServiceC --> ServiceA: OK
+    deactivate ServiceC
 
-ServiceA -> Kafka: Produce payment-confirmed topic
-Kafka --> ServiceA: OK
+    ServiceA -> Kafka: Produce payment-confirmed topic
+    Kafka --> ServiceA: OK
 
-ServiceA -> DB: Commit transaction
-ServiceA -> Kafka: Commit transaction
-deactivate ServiceA
+    ServiceA -> DB: Commit transaction
+    ServiceA -> Kafka: Commit transaction
+    deactivate ServiceA
 
-Kafka -> ServiceB: Consume payment-request topic
-activate ServiceB
-ServiceB -> DB: Update payment_transaction status \n<b>RECEIVED</b>
-DB --> ServiceB: OK
+    Kafka -> ServiceB: Consume payment-request topic
+    activate ServiceB
+    ServiceB -> DB: Update payment_transaction status \n<b>RECEIVED</b>
+    DB --> ServiceB: OK
 
-Kafka -> ServiceB: Consume payment-confirmed topic
-ServiceB -> ServiceC: GET /confirm-risk
-activate ServiceC
-ServiceC --> ServiceB: OK
-deactivate ServiceC
+    Kafka -> ServiceB: Consume payment-confirmed topic
+    ServiceB -> ServiceC: GET /confirm-risk
+    activate ServiceC
+    ServiceC --> ServiceB: OK
+    deactivate ServiceC
 
-ServiceB -> DB: Update payment_transaction status \n<b>COMPLETED</b>
-DB --> ServiceB: OK
-deactivate ServiceB
+    ServiceB -> DB: Update payment_transaction status \n<b>COMPLETED</b>
+    DB --> ServiceB: OK
+    deactivate ServiceB
 
+end
 @enduml
