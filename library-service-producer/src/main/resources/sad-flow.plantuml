@@ -22,7 +22,7 @@ ServiceA -> DB: Rollback transaction
 ServiceA -> Kafka: Rollback transaction
 deactivate ServiceA
 
-Kafka -> ServiceB: No messages delivered
-ServiceB -> DB: No update
+Kafka -> ServiceB: No messages delivered X
+ServiceB -> DB: X No update
 
 @enduml
