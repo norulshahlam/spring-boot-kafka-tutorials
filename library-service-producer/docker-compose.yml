@@ -96,7 +96,15 @@ services:
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka-1:9090,kafka-2:9090,kafka-3:9090
     networks:
       - kafka-net
-
+#  postgres-db:
+#    image: postgres:latest
+#    container_name: postgres-db
+#    environment:
+#      POSTGRES_DB: postgres
+#      POSTGRES_USER: admin
+#      POSTGRES_PASSWORD: password
+#    ports:
+#      - "5432:5432"
 networks:
   kafka-net:
     driver: bridge
