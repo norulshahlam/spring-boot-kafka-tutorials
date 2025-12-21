@@ -322,3 +322,92 @@ If you are using Java object as value when producing message, either:
 - Create the class in a common service. This is automatically create a trusted package in header and when you consume it, the package name will be the same and will read successfully
 -  Set the value as `String` type. Convert to String before sending it. Then in consumer side, set the value to String, then convert back to your own class. This is useful when you are not the owner of the producer side, and dont have control over it. Or you simply dont want the hassle of creating another service just for common objects
 </details>
+
+
+### Kafka Streams
+[Reference](https://double.cloud/blog/posts/2024/05/kafka-streams/)  
+
+<details>
+<summary>Click to expand</summary><br>  
+
+Kafka Streams is a powerful client library used to build
+real-time, fault-tolerant, and scalable stream processing applications where input and output data are stored in Apache Kafka clusters. It is particularly valuable because it allows developers to process and analyze data streams using familiar Java/Scala applications without needing a separate, dedicated processing cluster
+Kafka Streams exists for scale, correctness, and topology control. Here is the clear tradeoff.
+
+Manual consumer plus producer.
+
+What you do.
+- @KafkaListener
+- Filter in Java
+- Produce to another topic
+
+What you get.
+- Simple mental model
+- Fast to write
+- Easy debug
+
+What you lose.
+- No partition aware processing
+- No state stores
+- No exactly once guarantees
+- Hard parallelism control
+- Rebalance pain
+- Manual retry logic
+- Manual offset control
+- No windowing or joins
+
+Kafka Streams.
+
+What you do.
+- Define a topology
+- Let Kafka manage threads and partitions
+
+What you get.
+- One consumer per partition per thread
+- Ordered processing per key
+- Automatic rebalancing
+- Built in retries via reprocessing
+- Exactly once semantics with EOS v2
+- Stateful operators
+- Windowing and joins
+- Backpressure via commit interval
+- Scales by adding instances
+
+Fraud example comparison.
+
+Manual consumer.
+- You read transaction
+- You check amount
+- You send alert
+
+Breaks when.
+- You need per account aggregation
+- You need sliding window fraud
+- You need deduplication
+- You need cross topic joins
+- You need reprocessing
+
+Kafka Streams example value.
+
+- Count transactions per account in 5 minutes
+- Detect velocity fraud
+- Join payment with risk profile
+- Rebuild state by replaying topic
+- Zero extra infra
+
+Rule of thumb.
+
+Use manual consumer when.
+- Stateless logic
+- Low volume
+- One topic in, one topic out
+- No ordering guarantees required
+
+Use Kafka Streams when.
+- Stateful logic
+- Time based rules
+- High throughput
+- Need replay
+- Need correctness under rebalance
+
+</details>
