@@ -10,14 +10,14 @@ activate ServiceA
 ServiceA -> DB++: Insert payment_transaction status \n<b>PENDING</b>
 DB --> ServiceA--: OK
 
-ServiceA -> Kafka: Produce payment-request topic (Uncommitted)
+ServiceA -> Kafka++: Produce payment-request topic (Uncommitted)
 
 ServiceA -> ServiceC: GET /risk-score
 alt No Response
     activate ServiceC
     ServiceC --> ServiceA: timeout or error <b>(No Response)</b>
-    ServiceA -> DB: Rollback transaction
-    ServiceA -> Kafka: Rollback transaction
+    ServiceA -> DB: Rollback DB transaction
+    ServiceA -> Kafka: Rollback Kafka transaction
     ServiceA -> Client: END
     deactivate ServiceA
 else Success response
@@ -37,6 +37,7 @@ else Success response
     DB --> ServiceB: OK
 
     Kafka -> ServiceB: Consume payment-confirmed topic
+    deactivate Kafka
     ServiceB -> ServiceC: GET /confirm-risk
     activate ServiceC
     ServiceC --> ServiceB: OK
